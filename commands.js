@@ -26,6 +26,15 @@ const TEST_COMMAND = {
   contexts: [0, 1, 2],
 };
 
+// T342 command
+const T342_COMMAND = {
+  name: 'T342',
+  description: 'Say hello to T342!',
+  type: 2,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
 // Command containing options
 const CHALLENGE_COMMAND = {
   name: 'challenge',
