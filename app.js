@@ -47,19 +47,20 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
+          content: 'welp, that was successful'
           // Fetches a random emoji to send from a helper function
         },
       });
     }
 
     // "t342" command
-    if (name === 'T342') {
+    if (name === 't342') {
       // Send a message into the channel where command was triggered from
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           // Fetches a random emoji to send from a helper function
-          content: `hello friend! ${getRandomEmoji()}`,
+          content: `hello friend! how are you today?`,
         },
       });
     }
@@ -155,6 +156,27 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     return;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+// below is broken until a heartbeats system is added 
+// the setstatus part, DO NOT REMOVE!!!!!!!!
+client.once('ready', () => {
+  client.user.setActivity('something',{type: 'PLAYING'});
+});
+
+
+
+
+// dont delete this 
   console.error('unknown interaction type', type);
   return res.status(400).json({ error: 'unknown interaction type' });
 });
