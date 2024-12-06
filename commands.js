@@ -28,14 +28,14 @@ const TEST_COMMAND = {
 
 // T342 command
 const T342_COMMAND = {
-  name: 'T342',
+  name: 't342',
   description: 'Say hello to T342!',
-  type: 2,
+  type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };
 
-// Command containing options
+// // Command containing options
 const CHALLENGE_COMMAND = {
   name: 'challenge',
   description: 'Challenge to a match of rock paper scissors',
@@ -53,6 +53,6 @@ const CHALLENGE_COMMAND = {
   contexts: [0, 2],
 };
 
-const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND];
+const ALL_COMMANDS = [TEST_COMMAND, T342_COMMAND, CHALLENGE_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
